@@ -1,28 +1,30 @@
 const log = require('../log');
 const config = require('../config');
-const telegraf = require('telegraf');
-const extra = require('telegraf/extra');
 const markup = require('telegraf/markup');
+const admin = require('../admin');
 
 module.exports = (scene, stage, bot) => {
     log.verbose("Registering scene", {scene: 'start'});
     const start = new scene('start');
 
-    start.enter(async (ctx) => {
+    start.enter(async (ctx, next) => {
         if (ctx.session.authenticated) {
+            log.verbose("User is authenticated", {username: ctx.chat.username, id: ctx.chat.id})
             ctx.scene.enter("home");
         } else if (ctx.session.auth && ctx.session.auth.waiting) {
+            log.debug("User is spamming the auth button...", {username: ctx.chat.username, id: ctx.chat.id});
             ctx.reply("We already asked an admin if they can accept you. Please be patient.")
         } else {
+            log.verbose("Unauthenticated user started session", {username: ctx.chat.username, id: ctx.chat.id});
             ctx.reply(`Hi! Welcome to ${config.get("bot:name")}!`);
             let authMessage = await ctx.reply("You aren't authenticated to use this bot. Would you like to ask the admins for access?", markup.inlineKeyboard([
                     markup.callbackButton('👍 Yes', "yes"),
                     markup.callbackButton('👎 No', "no")
             ]).extra());
             start.action('yes', async (ctx, next) => {
+                log.info("User asked to be able to use the bot", {username: ctx.chat.username, id: ctx.chat.id, admins: config.get("telegram:admins")})
                 ctx.answerCbQuery();
                 await ctx.editMessageText("Status: ⌛ Waiting for admin...");
-                await ctx.editMessageReplyMarkup(authMessage.chat.id, authMessage.message_id, null, {});
                 ctx.session.auth = {
                     messageId: authMessage.message_id,
                     waiting: true,
@@ -30,15 +32,19 @@ module.exports = (scene, stage, bot) => {
                     username: authMessage.chat.username,
                     id: authMessage.chat.id
                 }
+                admin.authenticateUser(ctx);
                 return next();
             });
             start.action('no', (ctx, next) => {
+                log.verbose("User doesn't want to use the bot", {username: ctx.chat.username, id: ctx.chat.id})
                 ctx.answerCbQuery();
-                ctx.answerCbQuery("Okay!");
+                ctx.deleteMessage();
+                ctx.replyWithMarkdown("Okay! Type `/start` again if you change your mind.");
                 start.leave();
                 return next();
             })
         }
+        next();
     })
 
 

@@ -11,6 +11,7 @@ const scenes = require('./scenes/sceneHandler');
 log.info("Starting bot")
 
 const bot = new telegraf(config.get("telegram:botToken"));
+config.set("bot:bot", bot);
 bot.use((new session({database: 'config/db.json'})).middleware());
 
 stage.command('cancel', leave());

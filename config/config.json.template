@@ -1,16 +1,18 @@
 {
     "sonarr": {
-        "enabled": true
-
+        "url": "",
+        "apiKey": ""
     },
     "radarr": {
-        "enabled": true
-
+        "url": "",
+        "apiKey": ""
     },
     "telegram": {
-        "botToken": ""
+        "botToken": "",
+        "admins": []
     },
     "bot": {
-        "logLevel": "info"
+        "logLevel": "info",
+        "name": "the Bestest Bot"
     }
 }

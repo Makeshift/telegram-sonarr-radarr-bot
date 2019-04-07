@@ -6,13 +6,13 @@ nconf
     .file({
         file: './config/config.json'
     })
-    .required(["telegram:botToken", "sonarr", "radarr", "bot"])
+    .required(["telegram:botToken", "telegram:admins", "sonarr", "radarr", "bot"])
 
 nconf.defaults({
     "sonarr:enabled": true,
     "radarr:enabled": true,
     "bot:logLevel": "info",
-    "bot:name": "SonarrRadarrBot"
+    "bot:name": "the Bestest Bot"
 })
 
 module.exports = nconf;
