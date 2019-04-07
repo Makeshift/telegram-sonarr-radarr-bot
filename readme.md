@@ -101,5 +101,20 @@ Coming soon!
 -   [ ] File logging?
 -   [ ] Medusa search support?
 -   [ ] Medusa add anime support?
+-   [ ] Series details/Movie details (Episodes snatched, missing, overview, seasons, monitor stats, ratings)
+-   [ ] Search and manual download from within bot
+-   [ ] Change monitoring status
+-   [ ] Delete series (from Sonarr/Radarr & from disk?)
+-   [ ] System details? (Disk space etc.)
+-   [ ] Jellyfin API support? (Watch count/Popularity?)
+-   [ ] Plex API support? (Watch count/Popularity?)
+-   [ ] Emby API support? (Watch count/Popularity?)
+-   [ ] Currently downloading (Plex/Radarr rather than torrent API directly)
+-   [ ] Calendar? (Leveraging cool Telegram stuff)
+
+### Very far in the future plans
+
+-   [ ] Natural Language Processing
+
 
 [Feature request](https://github.com/Makeshift/telegram-sonarr-radarr-bot/issues/new?assignees=Makeshift&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D) or [Bug Report](https://github.com/Makeshift/telegram-sonarr-radarr-bot/issues/new?assignees=Makeshift&labels=bug&template=bug_report.md&title=%5BBUG%5D)? Click [here](https://github.com/Makeshift/telegram-sonarr-radarr-bot/issues/new/choose)!
