@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Makeshift/telegram-sonarr-radarr-bot/issues"
   },
-  "homepage": "https://github.com/Makeshift/telegram-sonarr-radarr-bot#readme"
+  "homepage": "https://github.com/Makeshift/telegram-sonarr-radarr-bot#readme",
+  "dependencies": {
+    "cli-highlight": "^2.1.0",
+    "nconf": "^0.10.0",
+    "triple-beam": "^1.3.0",
+    "winston": "^3.2.1"
+  }
 }
