@@ -1,0 +1,19 @@
+{
+  "name": "telegram-sonarr-radarr-bot",
+  "version": "0.1.0",
+  "description": "A combined Sonarr and Radarr Telegram bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Makeshift/telegram-sonarr-radarr-bot.git"
+  },
+  "author": "Makeshift@Github",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Makeshift/telegram-sonarr-radarr-bot/issues"
+  },
+  "homepage": "https://github.com/Makeshift/telegram-sonarr-radarr-bot#readme"
+}
