@@ -12,7 +12,14 @@ log.info("Starting bot")
 
 const bot = new telegraf(config.get("telegram:botToken"));
 config.set("bot:bot", bot);
-bot.use((new session({database: 'config/db.json'})).middleware());
+let dbSession = new session({database: 'config/db.json'});
+bot.use((dbSession).middleware());
+
+if (Object.keys(dbSession.getSession("GLOBAL") > 0)) {
+    log.debug("Global key is empty.")
+} else {
+    log.debug("Global key has data.")
+}
 
 stage.command('cancel', leave());
 bot.use(stage.middleware());

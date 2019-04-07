@@ -1,7 +1,6 @@
-const log = require('../log');
-const config = require('../config');
+const log = require('./log');
+const config = require('./config');
 const markup = require('telegraf/markup');
-const admin = require('../admin');
 let bot = config.get("bot:bot");
 //log.info("User has requested access, sent to Admins", {user: ctx.chat.username, id: ctx.chat.id, admins: config.get("telegram:admins")});
 
