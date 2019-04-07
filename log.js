@@ -17,9 +17,16 @@ const cliFormat = printf(info => {
     return `${info.timestamp} ${info.level}: ${info.message} - ${info[SPLAT] ? highlight(JSON.stringify(info[SPLAT], null, 2), {language: 'json', ignoreIllegals: true}) : ""}`;
 });
 
-const logfileFormat = printf(info => {
-    return `${info.level}: ${info.message} - ${info[SPLAT] ? JSON.stringify(info[SPLAT], null, 2) : null}`;
-});
+// Since this is designed to run in a container mostly, I don't really care about logging to disk.
+// If this is needed by somebody, raise an issue and I'll make it an option.
+
+// const logfileFormat = printf(info => {
+//     return `${info.level}: ${info.message} - ${info[SPLAT] ? JSON.stringify(info[SPLAT], null, 2) : null}`;
+// });
+// function getDate() {
+//     let d = new Date();
+//     return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}T${d.getHours()}.${d.getMinutes()}.${d.getSeconds()}`
+// }
 
 const log = createLogger({
 
@@ -27,20 +34,17 @@ const log = createLogger({
         new transports.Console({
             timestamp: true,
             showLevel: true,
-            level: config.get("logLevel"),
+            level: config.get("bot:logLevel"),
             format: formatForTTY()
-        }),
+        })/*,
         new transports.File({
             filename: `logs/run.${getDate()}.log`,
             format: combine(json(), logfileFormat),
             level: "debug"
-        })
+        })*/
     ]
 });
 
-function getDate() {
-    let d = new Date();
-    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}T${d.getHours()}.${d.getMinutes()}.${d.getSeconds()}`
-}
+
 
 module.exports = log;

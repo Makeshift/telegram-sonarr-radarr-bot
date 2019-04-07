@@ -1,0 +1,16 @@
+{
+    "sonarr": {
+        "enabled": true
+
+    },
+    "radarr": {
+        "enabled": true
+
+    },
+    "telegram": {
+        "botToken": ""
+    },
+    "bot": {
+        "logLevel": "info"
+    }
+}

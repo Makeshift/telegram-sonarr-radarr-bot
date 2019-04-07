@@ -19,6 +19,8 @@
   "dependencies": {
     "cli-highlight": "^2.1.0",
     "nconf": "^0.10.0",
+    "telegraf": "^3.28.0",
+    "telegraf-session-local": "0.0.6",
     "triple-beam": "^1.3.0",
     "winston": "^3.2.1"
   }

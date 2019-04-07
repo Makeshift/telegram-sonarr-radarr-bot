@@ -4,10 +4,14 @@ nconf
     .argv()
     .env()
     .file({
-        file: 'config/config.json'
+        file: './config/config.json'
     })
-    .required(["sonarr", "radarr"])
+    .required(["telegram:botToken", "sonarr", "radarr", "bot"])
 
-nconf.defaults({})
+nconf.defaults({
+    "sonarr:enabled": true,
+    "radarr:enabled": true,
+    "bot:logLevel": "info"
+})
 
 module.exports = nconf;

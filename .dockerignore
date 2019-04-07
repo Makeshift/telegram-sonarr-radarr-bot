@@ -1,4 +1,5 @@
 node_modules
 config/config.json
+config/db.json
 logs
 *.log
