@@ -11,7 +11,8 @@ nconf
 nconf.defaults({
     "sonarr:enabled": true,
     "radarr:enabled": true,
-    "bot:logLevel": "info"
+    "bot:logLevel": "info",
+    "bot:name": "SonarrRadarrBot"
 })
 
 module.exports = nconf;
