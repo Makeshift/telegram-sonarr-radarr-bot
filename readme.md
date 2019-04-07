@@ -61,11 +61,11 @@ See [config/config.json.template](https://github.com/Makeshift/telegram-sonarr-r
 
 ## Installing
 
-** `git clone https://github.com/Makeshift/telegram-sonarr-radarr-bot.git`
-** `npm install`
-** `cp config/config.json.template config/config.json`
-** Edit `config/config.json` to your liking
-** `node index.js`
+* `git clone https://github.com/Makeshift/telegram-sonarr-radarr-bot.git`
+* `npm install`
+* `cp config/config.json.template config/config.json`
+* Edit `config/config.json` to your liking
+* `node index.js`
 
 ### Docker
 
