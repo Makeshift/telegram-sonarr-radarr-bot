@@ -6,6 +6,18 @@
 ![Last Commit](https://img.shields.io/github/last-commit/makeshift/telegram-sonarr-radarr-bot.svg)
 ![Maintained](https://img.shields.io/maintenance/yes/2019.svg)
 
+
+
+
+# This project doesn't currently work, and is not actively maintained! 
+
+I plan to come back to it at some point as part of my [Marauder](github.com/Makeshift/Marauder) project. 
+
+
+
+
+
+
 # Telegram Sonarr/Radarr Bot
 
 I got tired of there being separate bots, so I started combining them into one.
